@@ -65,14 +65,6 @@ class GameDatabase:
     self.cursor.execute("SELECT * FROM games")
     results = self.cursor.fetchall()
 
-    print("\n========== ALL TIME RESULTS ==========")
-    for game in results:
-      print(f"\nGame: {game[0]}")
-      print(f"Wins: {game[1]}")
-      print(f"Losses: {game[2]}")
-      print(f"Total: {game[1] + game[2]}")
-    print("=====================================")
-
   def show_session_stats(self):
     print("\n========== CURRENT SESSION ==========")
     total_wins = 0
@@ -170,7 +162,7 @@ class Human:
       game_name = "Coin flip"
       print("GAME: Heads or tails!")
       coin = random.choice(["heads", "tails"])
-      answer = input("Choose heads or tails: ").lower().strip()
+      answer = input("Choose heads or tails: ").lower().strip()# методы:нижний регистр и убиратель пробелов
       print(f"The coin landed on: {coin}")
       won = answer == coin
 
@@ -179,7 +171,7 @@ class Human:
       print("Rock, Paper or Scissors!")
       choices = ["rock", "paper", "scissors"]
       computer = random.choice(choices)
-      answer = input("Your choice: ").lower().strip()
+      answer = input("Your choice: ").lower().strip() # та же дичб
       print(f"Computer chose: {computer}")
 
       if answer not in choices:
